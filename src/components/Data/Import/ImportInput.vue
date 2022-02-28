@@ -19,9 +19,9 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-xl-12">
-                        <LoadingButton v-if="GetLoading && !GetError"/>
-                        <ErrorAlert v-if="GetError" />
-                        <SuccessAlert v-if="GetSuccess" />
+                                <LoadingButton v-if="GetLoading && !GetError"/>
+                                <ErrorAlert v-if="GetError" />
+                                <SuccessAlert v-if="GetSuccess" />
                             </div>
                         </div>
                         
@@ -63,7 +63,7 @@ export default {
             this.$store.dispatch('getSportData', formData);
           }
 
-        }  
+        },
     },
     computed: {
         GetLoading() {

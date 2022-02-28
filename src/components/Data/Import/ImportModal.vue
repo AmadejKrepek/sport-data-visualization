@@ -1,5 +1,4 @@
 <template>
-<!-- Modal -->
 <div class="modal fade" id="importDataModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="importDataModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -12,7 +11,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Finish</button>
+        <button type="button" class="btn btn-primary"  :disabled="!GetSuccess">Load</button>
       </div>
     </div>
   </div>
@@ -24,8 +23,18 @@ import ImportInput from '../Import/ImportInput.vue'
 
 export default {
     name: 'ImportModal',
+    data() {
+      return {
+        disabled: 0
+      }
+    },
     components: {
         ImportInput,
     },
+    computed: {
+        GetSuccess() {
+            return this.$store.getters.getSuccess;
+        }
+    }
 }
 </script>
