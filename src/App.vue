@@ -2,7 +2,7 @@
   <div class="container-fluid p-0 mb-4">
     <div class="row">
       <div class="col-12 col-xl-12">
-        <ImportModal/>
+        <ImportModal />
         <HeadNav />
       </div>
     </div>
