@@ -1,15 +1,36 @@
 <template>
+    <div class="container-fluid">
         <form @submit.prevent="handleSubmit">
-            <div class="form-group mb-3">
-                <input type="file" @change="uploadFile" accept=".gpx, .tcx">
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="form-group mb-3">
+                        <input type="file" @change="uploadFile" accept=".gpx, .tcx">
+                    </div>
+                </div>
             </div>
-            <div class="form-group mb-3" v-if="files != null">
-                <button type="submit" class="btn btn-secondary">Upload</button>
-                <LoadingButton v-if="GetLoading && !GetError"/>
-                <ErrorAlert v-if="GetError" />
-                <SuccessAlert v-if="GetSuccess" />
+
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="form-group mb-3" v-if="files != null">
+                        <div class="row">
+                            <div class="col-12 col-xl-12">
+                                <button type="submit" class="btn btn-secondary mb-3">Upload</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-xl-12">
+                        <LoadingButton v-if="GetLoading && !GetError"/>
+                        <ErrorAlert v-if="GetError" />
+                        <SuccessAlert v-if="GetSuccess" />
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
+
         </form>
+    </div>    
 </template>
 
 <script>
