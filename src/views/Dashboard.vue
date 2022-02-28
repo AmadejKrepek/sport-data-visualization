@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12 col-md-12">
           <h1 class="text-center">This is dashboard page</h1>
