@@ -1,10 +1,10 @@
 const chartOptions = {
   title: {
-    text: "",
+    text: "Monthly Average Temperature",
     x: -20, //center
   },
   subtitle: {
-    text: "",
+    text: "Source: WorldClimate.com",
     x: -20,
   },
   xAxis: {

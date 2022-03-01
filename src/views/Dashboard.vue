@@ -15,7 +15,7 @@ import TestChart from '../components/Charts/TestChart.vue';
 export default {
   name: 'Dashboard',
   components: {
-    TestChart
+    TestChart,
   }
 }
 </script>

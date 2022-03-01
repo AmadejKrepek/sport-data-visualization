@@ -1,14 +1,13 @@
 import { createStore } from 'vuex'
 import { ImportSportData } from '../../utils/import/sportData';
-import { chartOptions } from '../../utils/chart/chartOptions';
 
 export default createStore({
   state: {
     loading: false,
     error: false,
     success: false,
-    sportData: [],
-    chartOptions: chartOptions
+    sportData: null,
+    chartOptions: null
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -28,12 +27,12 @@ export default createStore({
     }
   },
   actions: {
-    getSportData({ commit }, sportData) {
-      ImportSportData(sportData, commit);
-      commit('SET_SPORT_DATA', sportData);
+    getSportData({ commit }, fileData) {
+      ImportSportData(fileData, commit);
     }
   },
   getters: {
+    getSportData: (state) => state.sportData,
     getLoadingTime: (state) => state.loading,
     getError: (state) => state.error,
     getSuccess: (state) => state.success,

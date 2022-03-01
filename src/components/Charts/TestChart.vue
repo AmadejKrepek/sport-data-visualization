@@ -1,15 +1,10 @@
 <template>
-  <Highcharts ref="highchartsRef" :options="GetChartOptions"></Highcharts>
+  <Highcharts v-if="GetChartOptions != null" ref="highchartsRef" :options="GetChartOptions" />
 </template>
 
 <script>
 export default {
   name: "TestChart",
-  data() {
-      return {
-          options: null
-      }
-  },
   computed: {
       GetChartOptions() {
           return this.$store.getters.getChartOptions;

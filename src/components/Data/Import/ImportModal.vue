@@ -8,6 +8,7 @@
       </div>
       <div class="modal-body">
         <ImportInput />
+        <ImportData />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -20,6 +21,7 @@
 
 <script>
 import ImportInput from '../Import/ImportInput.vue'
+import ImportData from '../Import/ImportData.vue';
 
 export default {
     name: 'ImportModal',
@@ -30,6 +32,7 @@ export default {
     },
     components: {
         ImportInput,
+        ImportData
     },
     computed: {
         GetSuccess() {

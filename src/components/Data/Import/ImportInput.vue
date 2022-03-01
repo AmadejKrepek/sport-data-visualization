@@ -47,7 +47,7 @@ export default {
     },
     data() {
         return {
-             files: null
+             files: null,
         }
     },
     methods: {
