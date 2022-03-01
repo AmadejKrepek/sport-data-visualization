@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import { ImportSportData } from '../../utils/import/sportData';
+import { ImportSportData } from '../utils/import/sportData';
 
 export default createStore({
   state: {

@@ -1,5 +1,5 @@
 import auth from '../axios/auth';
-import { chartOptions } from '../../utils/chart/chartOptions';
+import { addCharts } from '../../functions/charts/addCharts';
 
 function ImportSportData(data, commit) {
     commit('SET_LOADING_TIME', true);
@@ -7,7 +7,7 @@ function ImportSportData(data, commit) {
     .then(response => {
         console.log(response)
         commit('SET_SPORT_DATA', response.data);
-        commit('SET_CHART_OPTIONS', chartOptions)
+        commit('SET_CHART_OPTIONS', addCharts(response.data))
         commit('SET_SUCCESS', true);
     })
     .catch((error) => {
