@@ -1,6 +1,12 @@
 # Web Application Sport Activities Visualization
 
-Web Application for parsing .tcx and .gpx files from different sources for further visualization analysis and providing real time data visualization.
+Interactive web application for parsing .tcx and .gpx files from different sources for further visualization analysis and providing real time data visualization. The purpose of this project is to improve data visualisation of raw files that were previously extracted from various sport devices such as sport trackers or other external devices. 
+
+The project was inspired from existing project <a href="https://github.com/firefly-cpp/sport-activities-features">sport-activities-features</a> that was later on upgraded with feature <a href="https://github.com/alenrajsp/sport-activities-features-api">sport-activities-api</a> which is a Python library with REST API architecture that this project is using for interactive data manipulation.
+
+## Motivation
+
+The purpose of this project is to bring closer weather conditions within the sport activity and find various data associtations that are dificult to see without closer look. My interest in weather also motivates me to implement such feature in matters of rich analysis and coordination with my mentor of this project <b>dr. I. Jr. Fister</b> is priceless.
 
 ## Visualization
 
