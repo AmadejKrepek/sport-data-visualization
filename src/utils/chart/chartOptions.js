@@ -41,7 +41,6 @@ function scaleYAxis(distanceText) {
       {
         value: 0,
         width: 1,
-        color: "#808080",
       },
     ],
     min: 0,
@@ -53,7 +52,10 @@ function scaleYAxis(distanceText) {
 const chartOptions = {
   chart: {
     type: 'area',
-    zoomType: 'x'
+    zoomType: 'x',
+    events: {
+      
+    }
   },
   title: {
     text: "",
@@ -78,7 +80,6 @@ const chartOptions = {
         connectNulls: true
     },
     area: {
-        backgroundColor: 'gray',
         fillColor: 'green'
     }
   },
@@ -91,6 +92,36 @@ const chartOptions = {
     align: "right",
     verticalAlign: "middle",
     borderWidth: 0,
+  },
+  responsive: {
+    rules: [{
+        condition: {
+            maxWidth: 500
+        },
+        chartOptions: {
+            legend: {
+                align: 'center',
+                verticalAlign: 'bottom',
+                layout: 'horizontal'
+            },
+            yAxis: {
+                labels: {
+                    align: 'left',
+                    x: 0,
+                    y: -5
+                },
+                title: {
+                    text: null
+                }
+            },
+            subtitle: {
+                text: null
+            },
+            credits: {
+                enabled: false
+            }
+        }
+    }]
   },
   series: [
     {

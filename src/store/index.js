@@ -7,11 +7,15 @@ export default createStore({
     error: false,
     success: false,
     sportData: null,
+    integralSportData: null,
     chartOptions: null
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
       state.sportData = sportData;
+    },
+    SET_INTEGRAL_SPORT_DATA(state, integralSportData) {
+      state.integralSportData = integralSportData;
     },
     SET_LOADING_TIME(state, loading) {
       state.loading = loading;
@@ -33,6 +37,7 @@ export default createStore({
   },
   getters: {
     getSportData: (state) => state.sportData,
+    getIntegralSportData: (state) => state.integralSportData,
     getLoadingTime: (state) => state.loading,
     getError: (state) => state.error,
     getSuccess: (state) => state.success,

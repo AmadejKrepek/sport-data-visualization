@@ -2,6 +2,7 @@ import moment from 'moment';
 import { tooltipFormater, labelsFormatter, scaleYAxis } from '../../../utils/chart/chartOptions';
 
 function getAltitudeChart(altitudeChart, filteredData) {
+    altitudeChart.chartOptions.chart.type = 'area';
     altitudeChart.chartOptions.series[0].data = filteredData.altitudes.map(x => Math.floor(x * 100) / 100);
     altitudeChart.chartOptions.xAxis.categories = filteredData.timestamps.map(x => moment(x));
     altitudeChart.chartOptions.xAxis.labels = labelsFormatter;
@@ -22,7 +23,7 @@ function getDistanceChart(distanceChart, filteredData) {
 
 function getHeartChart(heartChart, filteredData) {
     heartChart.chartOptions.chart.type = 'line';
-    heartChart.chartOptions.series[0].data = filteredData.heartrates.map(x => Math.floor(x * 100) / 100);
+    heartChart.chartOptions.series[0].data = filteredData.heartrates.map(x => x);
     heartChart.chartOptions.xAxis.categories = filteredData.timestamps.map(x => moment(x));
     heartChart.chartOptions.xAxis.labels = labelsFormatter;
     heartChart.chartOptions.tooltip = tooltipFormater;

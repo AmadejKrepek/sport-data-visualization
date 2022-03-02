@@ -1,13 +1,16 @@
-import auth from '../axios/auth';
 import { addCharts } from '../../functions/charts/addCharts';
+import { removeEmptyMetrics } from '../../functions/tables/integralMetrics/removeEmptyMetrics';
+import { AddMultipleRequests } from '../axios/multipleAxios';
+import axios from 'axios';
 
 function ImportSportData(data, commit) {
     commit('SET_LOADING_TIME', true);
-    auth.post('/reader/file', data)
-    .then(response => {
-        console.log(response)
-        commit('SET_SPORT_DATA', response.data);
-        commit('SET_CHART_OPTIONS', addCharts(response.data))
+    axios.all(AddMultipleRequests(data))
+    .then(responses => {
+        console.log(responses)
+        commit('SET_SPORT_DATA', responses[0].data);
+        commit('SET_CHART_OPTIONS', addCharts(responses[0].data))
+        commit('SET_INTEGRAL_SPORT_DATA', removeEmptyMetrics(responses[1].data));
         commit('SET_SUCCESS', true);
     })
     .catch((error) => {
