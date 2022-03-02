@@ -1,6 +1,6 @@
 # Web Application Sportactivitiesapp
 
-Web Application for parsing .tcx and .gpx files from different sources. 
+Web Application for parsing .tcx and .gpx files from different sources for further visualization analysis and providing real time data visualization.
 
 ## Visualization
 
@@ -23,6 +23,7 @@ Different kind of data visualization for sport analysis.
 
 ## Coming soon
 
+- Realtime data visualization
 - Weather conditions within exercise
 - Hill identification
 - Data comparison
