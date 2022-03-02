@@ -1,4 +1,4 @@
-# Web Application Sportactivitiesapp
+# Web Application Sport Activities Visualization
 
 Web Application for parsing .tcx and .gpx files from different sources for further visualization analysis and providing real time data visualization.
 
@@ -30,4 +30,9 @@ Different kind of data visualization for sport analysis.
 - Local storage for data analysis
 - Map visualization
 - User registration
+
+## References
+
+I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "A minimalistic toolbox for extracting features from sport activity files", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927.
+
 
