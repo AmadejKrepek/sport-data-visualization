@@ -8,7 +8,8 @@ export default createStore({
     success: false,
     sportData: null,
     integralSportData: null,
-    chartOptions: null
+    chartOptions: null,
+    weatherData: { check: false, apiKey: '' },
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -28,11 +29,28 @@ export default createStore({
     },
     SET_CHART_OPTIONS(state, chartOptions){
       state.chartOptions = chartOptions;
+    },
+    SET_CHECK_WEATHER_DATA(state, check) {
+      state.weatherData.check = check;
+    },
+    SET_WEATHER_API_KEY(state, apiKey) {
+      state.weatherData.apiKey = apiKey;
     }
   },
   actions: {
     getSportData({ commit }, fileData) {
-      ImportSportData(fileData, commit);
+      if (this.state.weatherData.apiKey != '') {
+        //ImportSportDataWithWeather(this.state.sportData, this.state.weatherData.apiKey, commit);
+      }
+      else {
+        ImportSportData(fileData, commit);
+      }
+    },
+    setCheckWeather({ commit }, newValue) {
+      commit ('SET_CHECK_WEATHER_DATA', newValue);
+    },
+    setWeatherApiKey({ commit }, apiKey) {
+      commit ('SET_WEATHER_API_KEY', apiKey);
     }
   },
   getters: {
@@ -41,8 +59,11 @@ export default createStore({
     getLoadingTime: (state) => state.loading,
     getError: (state) => state.error,
     getSuccess: (state) => state.success,
-    getChartOptions: (state) => state.chartOptions
+    getChartOptions: (state) => state.chartOptions,
+    getCheckWeatherData: (state) => state.weatherData.check,
+    getWeatherApiKey: (state) => state.weatherData.apiKey,
   },
   modules: {
+
   }
 })

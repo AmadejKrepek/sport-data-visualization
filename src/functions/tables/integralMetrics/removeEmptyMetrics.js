@@ -35,7 +35,6 @@ function removeEmptyMetrics(data) {
     if (data.calories == null) {
         delete data.calories;
     }
-    console.log(data);
     return data;
 }
 

@@ -3,8 +3,18 @@
         <form @submit.prevent="handleSubmit">
             <div class="row">
                 <div class="col-12 col-xl-12">
-                    <div class="form-group mb-3">
-                        <input type="file" @change="uploadFile" accept=".gpx, .tcx">
+                    <ImportCheckWeather />
+                </div>
+            </div>
+            <div class="row" v-if="GetCheckWeather">
+                <div class="col-12 col-xl-12">
+                    <ImportWeatherApi />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xl-12">
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="weather_input" @change="uploadFile" accept=".gpx, .tcx">
                     </div>
                 </div>
             </div>
@@ -37,13 +47,17 @@
 import LoadingButton from '../../Loading/LoadingButton.vue';
 import ErrorAlert from '../../Alert/ErrorAlert.vue'
 import SuccessAlert from '../../Alert/SuccessAlert.vue'
+import ImportCheckWeather from './ImportCheckWeather.vue';
+import ImportWeatherApi from './ImportWeatherApi.vue';
 
 export default {
     name: 'ImportInput',
     components: {
         LoadingButton,
         ErrorAlert,
-        SuccessAlert
+        SuccessAlert,
+        ImportCheckWeather,
+        ImportWeatherApi
     },
     data() {
         return {
@@ -74,6 +88,9 @@ export default {
         },
         GetSuccess() {
             return this.$store.getters.getSuccess;
+        },
+        GetCheckWeather() {
+            return this.$store.getters.getCheckWeatherData;
         }
     },
 }
