@@ -21,16 +21,16 @@ Different kind of data visualization for sport analysis.
 - Chart visualization
 - Zoom for details (chart)
 - Table visualization (integral metrics)
+- Weather conditions within exercise
+- Local storage for data analysis
 
 ![image](https://user-images.githubusercontent.com/59646470/156993497-4cfb9590-3182-41f1-b257-4231c016acc4.png)
 
 ## Coming soon
 
 - Realtime data visualization
-- Weather conditions within exercise
 - Hill identification
 - Data comparison
-- Local storage for data analysis
 - Map visualization
 - User registration
 
