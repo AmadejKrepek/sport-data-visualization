@@ -26,7 +26,14 @@
                     <td><fa icon="umbrella" class="weather-symbol" id="rain"></fa></td>
                 </tr>
                 <tr>
-                    <td v-for="item in 8" :key="item">{{item}}</td>
+                    <td>{{weatherData.conditions}}</td>
+                    <td>{{weatherData.temperature}} °C</td>
+                    <td>{{weatherData.relative_humidity}} %</td>
+                    <td>{{weatherData.dew_point}} °C</td>
+                    <td>{{weatherData.visibility}} km</td>
+                    <td>{{weatherData.cloud_cover}} %</td>
+                    <td>{{weatherData.wind_speed}} km/h</td>
+                    <td>{{weatherData.precipitation}} mm</td>
                 </tr>
             </tbody>
         </table>

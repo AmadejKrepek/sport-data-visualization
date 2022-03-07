@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import { ImportSportData } from '../utils/import/sportData';
+import { ImportSportDataWithWeather } from '../utils/import/sportDataWithWeather'; 
 
 export default createStore({
   state: {
@@ -9,7 +10,7 @@ export default createStore({
     sportData: null,
     integralSportData: null,
     chartOptions: null,
-    weatherData: { check: false, apiKey: '' },
+    weatherData: { check: false, apiKey: '', data: [] },
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -35,12 +36,15 @@ export default createStore({
     },
     SET_WEATHER_API_KEY(state, apiKey) {
       state.weatherData.apiKey = apiKey;
+    },
+    SET_WEATHER_DATA(state, weatherData) {
+      state.weatherData.data = weatherData;
     }
   },
   actions: {
     getSportData({ commit }, fileData) {
-      if (this.state.weatherData.apiKey != '') {
-        //ImportSportDataWithWeather(this.state.sportData, this.state.weatherData.apiKey, commit);
+      if (this.state.weatherData.apiKey != '' && this.state.weatherData.check == true) {
+        ImportSportDataWithWeather(this.state.weatherData.apiKey, commit);
       }
       else {
         ImportSportData(fileData, commit);
@@ -62,6 +66,7 @@ export default createStore({
     getChartOptions: (state) => state.chartOptions,
     getCheckWeatherData: (state) => state.weatherData.check,
     getWeatherApiKey: (state) => state.weatherData.apiKey,
+    getWeatherData: (state) => state.weatherData.data,
   },
   modules: {
 
