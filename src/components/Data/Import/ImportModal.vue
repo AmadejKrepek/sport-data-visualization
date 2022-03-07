@@ -3,15 +3,16 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="importDataModalLabel">Import Data Widget</h5>
+        <h5 class="modal-title" id="importDataModalLabel">Import Data</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <ImportInput />
+        <ImportData />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"  :disabled="!GetSuccess">Load</button>
+        <!--<button type="button" class="btn btn-primary"  :disabled="!GetSuccess">Load</button>-->
       </div>
     </div>
   </div>
@@ -20,6 +21,7 @@
 
 <script>
 import ImportInput from '../Import/ImportInput.vue'
+import ImportData from '../Import/ImportData.vue';
 
 export default {
     name: 'ImportModal',
@@ -30,6 +32,7 @@ export default {
     },
     components: {
         ImportInput,
+        ImportData
     },
     computed: {
         GetSuccess() {
