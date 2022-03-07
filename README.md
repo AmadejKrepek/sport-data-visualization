@@ -1,4 +1,4 @@
-# Web Application Sport Activities Visualization
+# Sport Data Visualization
 
 Interactive web application for parsing .tcx and .gpx files from different sources for further visualization analysis and providing real time data visualization. The purpose of this project is to improve data visualisation of raw files that were previously extracted from various sport devices such as sport trackers or other external devices. 
 
@@ -12,7 +12,7 @@ The purpose of this project is to bring closer weather conditions within the spo
 
 Different kind of data visualization for sport analysis.
 
-![image](https://user-images.githubusercontent.com/59646470/156372254-d36d4108-5b63-4183-992a-e1784dd6d2bc.png)
+![image](https://user-images.githubusercontent.com/59646470/156993617-6f4ebe5a-d1e1-4022-a104-bd068239d275.png)
 
 ## Features
 
@@ -22,10 +22,7 @@ Different kind of data visualization for sport analysis.
 - Zoom for details (chart)
 - Table visualization (integral metrics)
 
-![image](https://user-images.githubusercontent.com/59646470/156373133-62aaeb33-5df5-4b88-b0a7-9066c6dc2fe1.png)
-
-![image](https://user-images.githubusercontent.com/59646470/156373245-458b09bc-5c1d-4e82-b605-f6bd8e122f95.png)
-
+![image](https://user-images.githubusercontent.com/59646470/156993497-4cfb9590-3182-41f1-b257-4231c016acc4.png)
 
 ## Coming soon
 
