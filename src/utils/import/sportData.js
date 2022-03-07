@@ -1,6 +1,6 @@
 import { addCharts } from '../../functions/charts/addCharts';
 import { removeEmptyMetrics } from '../../functions/tables/integralMetrics/removeEmptyMetrics';
-import { AddMultipleRequests } from '../axios/multipleAxios';
+import { AddMultipleRequests, AddTopographicRequest } from '../axios/multipleAxios';
 import axios from 'axios';
 import { setWithExpiry } from '../localstorage/localstorage';
 
@@ -21,6 +21,8 @@ function ImportSportData(data, commit) {
         commit('SET_CHART_OPTIONS', addCharts(responses[0].data))
         commit('SET_INTEGRAL_SPORT_DATA', removeEmptyMetrics(responses[1].data));
         commit('SET_SUCCESS', true);
+
+        AddTopographicRequest(JSON.stringify(responses[0].data));
     })
     .catch((error) => {
         commit('SET_ERROR', true);

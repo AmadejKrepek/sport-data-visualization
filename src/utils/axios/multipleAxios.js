@@ -23,7 +23,18 @@ function AddWeatherRequest(rawData, apiKey) {
     return arr;
 }
 
+function AddTopographicRequest(jsonData) {
+    let arr = []
+
+    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:50000/topographicFeatures/', jsonData);
+
+    arr.push(requestOne);
+
+    return arr;
+}
+
 export {
     AddMultipleRequests, 
     AddWeatherRequest,
+    AddTopographicRequest
 }
