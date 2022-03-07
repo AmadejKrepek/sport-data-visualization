@@ -51,18 +51,18 @@ function scaleYAxis(distanceText) {
 
 const chartOptions = {
   chart: {
-    type: 'area',
+    type: 'bar',
     zoomType: 'x',
     events: {
       
     }
   },
   title: {
-    text: "",
+    text: "Altitudes",
     x: -20, //center
   },
   subtitle: {
-    text: "",
+    text: "Metrics",
     x: -20,
   },
   xAxis: {

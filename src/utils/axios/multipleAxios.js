@@ -33,8 +33,20 @@ function AddTopographicRequest(jsonData) {
     return arr;
 }
 
+function AddRealTimeRequest() {
+    let arr = [];
+
+    const requestOne = auth.get('https://vreme-podnebje.si/weather');
+
+    arr.push(requestOne);
+
+    return arr;
+
+}
+
 export {
     AddMultipleRequests, 
     AddWeatherRequest,
-    AddTopographicRequest
+    AddTopographicRequest,
+    AddRealTimeRequest
 }
