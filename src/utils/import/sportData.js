@@ -7,7 +7,7 @@ import { setWithExpiry } from '../localstorage/localstorage';
 function ImportSportData(data, commit) {
     commit('SET_LOADING_TIME', true);
 
-    commit('SET_WEATHER_DATA', [])
+    commit('SET_WEATHER_DATA', []);
 
     axios.all(AddMultipleRequests(data))
     .then(responses => {
