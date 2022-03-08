@@ -19,7 +19,8 @@ export default {
         return {
             polling: null,
             defaultChartOptions: chartOptions,
-            visibility: 'd-none'
+            visibility: 'd-none',
+            selectedTemp: false
         }
     },
     methods: {
@@ -30,23 +31,24 @@ export default {
         pollData () {
 		this.polling = setInterval(() => {
 
+            this.$store.dispatch('getRealTime');
             this.$store.dispatch('getRealTimeChartPoint', this.$refs.realTimeChart.chart)
 
             }, 1000)
-	},
+        },
         SelectedChart(num) {
             this.$store.dispatch('setChart', num);
+            this.selectedTemp = true;
         },
         ShowChart() {
             this.visibility = 'd-block'
         },
     },
-    
     beforeUnmount () {
-	clearInterval(this.polling)
+        clearInterval(this.polling)
     },
     created () {
-    this.pollData()
+        this.pollData()
     },  
     computed: {
         GetRealTime() {
@@ -57,7 +59,7 @@ export default {
         },
         GetNumSelectedChart() {
          return this.$store.getters.getNumSelectedChart;
-    }
+        }
     }
 }
 </script>

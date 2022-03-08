@@ -1,6 +1,11 @@
 <template>
 <div class="container-fluid">
     <div class="row">
+         <div class="col-12 col-xl-12">
+            <RealtimeWeather />
+        </div>
+    </div>
+    <div class="row">
         <div class="col-12 col-xl-12">
             <RealtimeChart />
         </div>
@@ -11,10 +16,12 @@
 
 <script>
 import RealtimeChart from './RealtimeChart.vue';
+import RealtimeWeather from './RealtimeWeather.vue';
 
 export default {
     components: {
-        RealtimeChart
+        RealtimeChart,
+        RealtimeWeather
     }
 }
 </script>

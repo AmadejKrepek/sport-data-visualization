@@ -69,11 +69,32 @@ const chartOptions = {
     categories: [],
     tickInterval: 100,
     labels: {
-      labelsFormatter
+      formatter: function () {
+        return moment(String(this.value)).format('HH:mm');
+      }
     }
   },
   yAxis: {
+    tickPositioner: function () {
+      var positions = [],
+          tick = Math.floor(this.dataMin),
+          increment = Math.ceil((this.dataMax - this.dataMin) / 15);
 
+      if (this.dataMax !== null && this.dataMin !== null) {
+          for (tick; tick - increment <= this.dataMax; tick += increment) {
+              positions.push(tick);
+          }
+      }
+      return positions;
+    },
+    plotLines: [
+      {
+        value: 0,
+        width: 1,
+      },
+    ],
+    min: 0,
+    tickInterval: 100
   },
   plotOptions: {
     series: {
@@ -85,7 +106,16 @@ const chartOptions = {
   },
   tooltip: {
     valueSuffix: " km",
-    tooltipFormater
+    formatter: function() {
+      var s = '<b>'+ moment(this.x).format('DD.MM.YYYY HH:mm:ss') +'</b>';
+
+      $.each(this.points, function(i, point) {
+              s += '<br/><span style="color:' + point.color + '">\u25CF</span> ' + point.series.name + ': ' + '<b>' + point.y + '</b>';
+      });
+
+      return s;
+      },
+    shared: true
   },
   legend: {
     layout: "vertical",

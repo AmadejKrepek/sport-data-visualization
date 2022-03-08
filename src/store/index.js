@@ -76,7 +76,7 @@ export default createStore({
     },
     getRealTimeChartPoint({ commit }, chart) {
       if (this.state.realTime.chartOptions != null) {
-        UpdatePoint(chart, this.state.realTime.chartOptions, this.state.realTime.selectedChart, this.state.realTime.data, commit);
+        UpdatePoint(chart, this.state.realTime.selectedChart, this.state.realTime.data, commit);
       }
     },
     setChart({commit}, value) {
