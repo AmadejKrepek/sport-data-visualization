@@ -13,7 +13,7 @@ export default createStore({
     integralSportData: null,
     chartOptions: null,
     weatherData: { check: false, apiKey: '', data: [] },
-    realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: 0 }
+    realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: null }
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -95,6 +95,7 @@ export default createStore({
     getWeatherData: (state) => state.weatherData.data,
     getRealTime: (state) => state.realTime.data,
     getRealTimeChartOptions: (state) => state.realTime.chartOptions,
+    getNumSelectedChart: (state) => state.realTime.selectedChart,
   },
   modules: {
 

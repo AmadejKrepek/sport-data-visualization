@@ -1,33 +1,18 @@
+import { randomDoubleFromInterval } from "../../random/randomNumber";
+
 function UpdatePoint(chart, chartOptions, selected) {
 
-    if (selected == 0) {        
-        chart.subtitle.text = 'babica';
-        //chart.series[0].addPoint(Math.random() * 100);
-        chart.update({
-            chart: {
-                type: 'area',
-                zoomType: 'x',
-            },
-            title: {
-                text: "Altitude",
-                x: -20, //center
-            },
-            subtitle: {
-                text: 'Metrics123'
-            },
-            yAxis: {
-                title: {
-                    text: 'Altitude (m)'
-                }
-            },
-            series: [
-            {
-                name: "Athlete",
-                color: 'green',
-                data: chartOptions[0].chartOptions.series[0].data.map(x => x),  
-            },
-            ],
-        })
+    if (selected == 0) {
+        chart.series[0].addPoint(randomDoubleFromInterval(50, 800), true);
+    }
+    else if (selected == 1) {
+        chart.series[0].addPoint(randomDoubleFromInterval(2, 5), true);
+    }
+    else if (selected == 2) {
+        chart.series[0].addPoint(randomDoubleFromInterval(80, 120), true);
+    }
+    else if (selected == 3) {
+        chart.series[0].addPoint(randomDoubleFromInterval(1, 40), true);
     }
 }
 

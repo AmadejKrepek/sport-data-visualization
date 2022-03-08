@@ -1,22 +1,25 @@
 <template>
     <div v-if="GetRealTimeChartOptions != null">
         <div>
-            <button class="btn btn-primary m-1" @click="UpdateAltitude($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(0)">Altitude</button>
-            <button class="btn btn-primary m-1" @click="UpdateDistance($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(1)">Distance</button>
-            <button class="btn btn-primary m-1" @click="UpdateHeartRate($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(2)">Heart Rate</button>
-            <button class="btn btn-primary m-1" @click="UpdateSpeed($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(3)">Speed</button>
+            <button class="btn btn-primary m-1" @click="UpdateAltitude($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(0), ShowChart()">Altitude</button>
+            <button class="btn btn-primary m-1" @click="UpdateDistance($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(1), ShowChart()">Distance</button>
+            <button class="btn btn-primary m-1" @click="UpdateHeartRate($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(2), ShowChart()">Heart Rate</button>
+            <button class="btn btn-primary m-1" @click="UpdateSpeed($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(3), ShowChart()">Speed</button>
         </div>
-        <Highcharts ref="realTimeChart" :options="GetRealTimeChartOptions[0].chartOptions"  />
+        <Highcharts ref="realTimeChart" :options="defaultChartOptions" :class="visibility" />
     </div>
 </template>
 
 <script>
+import { chartOptions } from '../../utils/chart/chartOptions';
 import { UpdateAltitude, UpdateDistance, UpdateHeartRate, UpdateSpeed } from '../../functions/charts/update/updateCharts';
 
 export default {
     data() {
         return {
             polling: null,
+            defaultChartOptions: chartOptions,
+            visibility: 'd-none'
         }
     },
     methods: {
@@ -29,12 +32,16 @@ export default {
 
             this.$store.dispatch('getRealTimeChartPoint', this.$refs.realTimeChart.chart)
 
-            }, 5000)
+            }, 1000)
 	},
-    SelectedChart(num) {
-        this.$store.dispatch('setChart', num);
-    }
+        SelectedChart(num) {
+            this.$store.dispatch('setChart', num);
+        },
+        ShowChart() {
+            this.visibility = 'd-block'
+        },
     },
+    
     beforeUnmount () {
 	clearInterval(this.polling)
     },
@@ -47,7 +54,10 @@ export default {
         },
         GetRealTimeChartOptions() {
             return this.$store.getters.getRealTimeChartOptions;
-        }
+        },
+        GetNumSelectedChart() {
+         return this.$store.getters.getNumSelectedChart;
+    }
     }
 }
 </script>
