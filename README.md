@@ -12,6 +12,12 @@ The purpose of this project is to bring closer weather conditions within the spo
 
 Different kind of data visualization for sport analysis.
 
+### Realtime charts
+
+![sportActivity](https://user-images.githubusercontent.com/59646470/157216552-83354d23-6463-419f-978f-87e7e2b95ffa.gif)
+
+### Importer Settings
+
 ![image](https://user-images.githubusercontent.com/59646470/156993617-6f4ebe5a-d1e1-4022-a104-bd068239d275.png)
 
 ## Features
