@@ -52,6 +52,8 @@ For both <b>Linux</b> and <b>Windows</b> users:
 
 - <a href="https://www.npmjs.com/">NPM</a> or <a href="https://yarnpkg.com/">YARN</a> installed
 
+This project is developed using NPM version <b>8.1.1</b> and anything greater than that will work fine.
+
 ### Windows and Linux
 
 Open terminal and go to <b>root</b> of your project directory, then you paste next command:
@@ -82,6 +84,8 @@ npm run serve
 yarn run serve
 ```
 
+Open your browser and go to this url: http://localhost:8080
+
 ### Production
 
 To prepare your project for production use, proceed with next command:
@@ -97,6 +101,8 @@ npm run build
 ```
 yarn run build
 ```
+
+It will create /dist folder in your root of the project with compiled and minified code. Copy and paste the content of /dist folder to your website directory.
 
 ## References
 
