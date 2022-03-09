@@ -40,6 +40,64 @@ Different kind of data visualization for sport analysis.
 - Map visualization
 - User registration
 
+## Installation guide
+
+This project is implemented in Vue3 javascript framework. 
+
+It can be cloned or downloaded to your device, whether you are Linux or Windows user.
+
+### Requirements
+
+For both <b>Linux</b> and <b>Windows</b> users:
+
+- <a href="https://www.npmjs.com/">NPM</a> or <a href="https://yarnpkg.com/">YARN</a> installed
+
+### Windows and Linux
+
+Open terminal and go to <b>root</b> of your project directory, then you paste next command:
+
+- with NPM installed
+
+```
+npm install
+```
+
+- with YARN installed
+
+```
+yarn install
+```
+
+When previous step is completed, you can <b>run</b> your project with next command:
+
+- with NPM installed
+
+```
+npm run serve
+```
+
+- with YARN installed
+
+```
+yarn run serve
+```
+
+### Production
+
+To prepare your project for production use, proceed with next command:
+
+- with NPM installed
+
+```
+npm run build
+```
+
+- with YARN installed
+
+```
+yarn run build
+```
+
 ## References
 
 I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "A minimalistic toolbox for extracting features from sport activity files", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927.
