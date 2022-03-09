@@ -108,4 +108,6 @@ It will create /dist folder in your root of the project with compiled and minifi
 
 I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "A minimalistic toolbox for extracting features from sport activity files", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927.
 
+## License
 
+This project is using <a href="https://choosealicense.com/licenses/mit/">MIT</a> license.
