@@ -8,24 +8,8 @@
 
         <ol-view ref="view" :center="[GetSportData.positions[0][0], GetSportData.positions[GetSportData.positions[0].length - 1][1]]" :rotation="rotation" :zoom="zoom" :projection="projection" />
 
-        <ol-fullscreen-control v-if="fullscreencontrol" />
-        <ol-mouseposition-control v-if="mousepositioncontrol" />
-        <ol-attribution-control v-if="attributioncontrol" />
-
-        <ol-overviewmap-control v-if="overviewmapcontrol">
-            <ol-tile-layer>
-                <ol-source-xyz :url="selected" />
-            </ol-tile-layer>
-         </ol-overviewmap-control>
-
-        <ol-scaleline-control v-if="scalelinecontrol" />
-        <ol-rotate-control v-if="rotatecontrol" />
-        <ol-zoom-control v-if="zoomcontrol" />
-        <ol-zoomslider-control v-if="zoomslidercontrol" />
-        <ol-zoomtoextent-control v-if="zoomtoextentcontrol" :extent="[23.906,42.812,46.934,34.597]" tipLabel="Fit To Slovenia" />
-
         <ol-tile-layer>
-                <ol-source-xyz :url="selected" />
+            <ol-source-xyz :url="selected" />
         </ol-tile-layer>
 
         <ol-vector-layer>
@@ -39,9 +23,35 @@
             </ol-source-vector>
         </ol-vector-layer>
 
-        <ol-overlay :position="[GetSportData.positions[0][0] + 0.03192, GetSportData.positions[0][1] + 0.0229]">
+        <ol-overlay :position="GetSportData.positions[0]">
             <template v-slot="slotProps">
-               <div class="container-fluid rounded-2 bg-secondary text-center p-4 opacity-75">
+               <div class="container-fluid rounded-2text-center">
+                    <div class="row">
+                        <div class="col-12 col-xl-12">
+                            <fa icon="flag-checkered" class="flag-symbol" id="temperature"></fa>
+                            <span class="d-none">{{slotProps}}</span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </ol-overlay>
+
+        <ol-overlay :position="GetSportData.positions[1]">
+            <template v-slot="slotProps">
+               <div class="container-fluid rounded-2 text-center">
+                    <div class="row">
+                        <div class="col-12 col-xl-12">
+                            <fa icon="flag-checkered" class="flag-end-symbol" id="temperature"></fa>
+                            <span class="d-none">{{slotProps}}</span>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </ol-overlay>
+
+        <ol-overlay :position="[GetSportData.positions[0][0] + 0.00192, GetSportData.positions[0][1] + 0.0029]">
+            <template v-slot="slotProps">
+               <div class="container-fluid rounded-2 bg-secondary text-center p-4">
                     <div class="row">
                         <div class="col-12 col-xl-12">
                             <h3>Summary</h3> 
@@ -90,19 +100,6 @@ export default {
             selected
         }
     },
-    data() {
-        return {
-        fullscreencontrol: true,
-        attributioncontrol: true,
-        zoomcontrol: true,
-        zoomslidercontrol: true,
-        zoomtoextentcontrol: true,
-        scalelinecontrol: true,
-        overviewmapcontrol: true,
-        mousepositioncontrol: true,
-        rotatecontrol: true,
-        };
-    },
     methods: {
         CalculateDuration(values) {
             var startTime = values[0];
@@ -111,7 +108,7 @@ export default {
                 .duration(moment(endTime, 'YYYY/MM/DD HH:mm')
                 .diff(moment(startTime, 'YYYY/MM/DD HH:mm'))
                 ).asHours();
-            return Math.round(hours * 10) / 10;
+            return hours;
         }
     },
     computed: {
