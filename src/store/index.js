@@ -13,7 +13,7 @@ export default createStore({
     integralSportData: null,
     chartOptions: null,
     weatherData: { check: false, apiKey: '', data: [] },
-    realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: null }
+    realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: null, selectedStats: false }
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -54,6 +54,9 @@ export default createStore({
     },
     SET_SELECTED_CHART(state, chart) {
       state.realTime.selectedChart = chart;
+    },
+    SET_SELECTED_STATS(state, stats) {
+      state.realTime.selectedStats = stats;
     }
   },
   actions: {
@@ -81,6 +84,9 @@ export default createStore({
     },
     setChart({commit}, value) {
       commit ('SET_SELECTED_CHART', value);
+    },
+    setSelectedStats({commit}, value) {
+      commit ('SET_SELECTED_STATS', value);
     }
   },
   getters: {
@@ -96,6 +102,7 @@ export default createStore({
     getRealTime: (state) => state.realTime.data,
     getRealTimeChartOptions: (state) => state.realTime.chartOptions,
     getNumSelectedChart: (state) => state.realTime.selectedChart,
+    getSelectedStats: (state) => state.realTime.selectedStats
   },
   modules: {
 

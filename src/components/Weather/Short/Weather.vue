@@ -4,36 +4,36 @@
             <caption>{{caption}}</caption>
             <thead>
                 <tr>
-                    <th>Weather</th>
+                    <th v-if="weatherData.conditions != undefined">Weather</th>
                     <th>Temperature</th>
                     <th>Humidity</th>
                     <th>Dewpoint</th>
                     <th>Visibility</th>
-                    <th>Cloud Cover</th>
+                    <th v-if="weatherData.cloud_cover != undefined">Cloud Cover</th>
                     <th>Wind Speed</th>
                     <th>Precipititation</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td><fa icon="sun" class="weather-symbol" id="sun"></fa></td>
+                    <td v-if="weatherData.conditions != undefined"><fa icon="sun" class="weather-symbol" id="sun"></fa></td>
                     <td><fa icon="temperature-full" class="weather-symbol" id="temperature"></fa></td>
                     <td><fa icon="droplet" class="weather-symbol" id="humidity"></fa></td>
                     <td><fa icon="temperature-high" class="weather-symbol" id="dewpoint"></fa></td>
                     <td><fa icon="eye" class="weather-symbol" id="visibility"></fa></td>
-                    <td><fa icon="cloud-sun" class="weather-symbol" id="cloud-cover"></fa></td>
+                    <td v-if="weatherData.cloud_cover != undefined"><fa icon="cloud-sun" class="weather-symbol" id="cloud-cover"></fa></td>
                     <td><fa icon="wind" class="weather-symbol" id="wind"></fa></td>
                     <td><fa icon="umbrella" class="weather-symbol" id="rain"></fa></td>
                 </tr>
                 <tr>
-                    <td>{{weatherData.conditions}}</td>
-                    <td>{{weatherData.temperature}} °C</td>
-                    <td>{{weatherData.relative_humidity}} %</td>
-                    <td>{{weatherData.dew_point}} °C</td>
-                    <td>{{weatherData.visibility}} km</td>
-                    <td>{{weatherData.cloud_cover}} %</td>
-                    <td>{{weatherData.wind_speed}} km/h</td>
-                    <td>{{weatherData.precipitation}} mm</td>
+                    <td v-if="weatherData.conditions != undefined">{{weatherData.conditions}}</td>
+                    <td class="bigger-values">{{weatherData.temperature}} °C</td>
+                    <td class="bigger-values" v-if="weatherData.relative_humidity != null">{{weatherData.relative_humidity}} %</td><td class="bigger-values" v-else>{{weatherData.humidity}} %</td>
+                    <td class="bigger-values">{{weatherData.dew_point}} °C</td>
+                    <td class="bigger-values">{{weatherData.visibility}} km</td>
+                    <td class="bigger-values" v-if="weatherData.cloud_cover != undefined">{{weatherData.cloud_cover}} %</td>
+                    <td class="bigger-values">{{weatherData.wind_speed}} km/h</td>
+                    <td class="bigger-values">{{weatherData.precipitation}} mm</td>
                 </tr>
             </tbody>
         </table>
@@ -51,6 +51,10 @@ export default {
 </script>
 
 <style scoped>
+.bigger-values {
+    font-size: 18px;
+}
+
 #weather-table-short {
     background-color:rgb(245, 214, 176);
 }

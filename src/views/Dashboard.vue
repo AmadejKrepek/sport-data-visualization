@@ -1,8 +1,9 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 col-xl-12 mb-4" v-if="GetSportData == null">
-          <h1 class="text-center bg-secondary p-2" data-bs-toggle="modal" data-bs-target="#importDataModal" role="button">Click here to add some sports data</h1>
+      <div class="col-12 col-xl-12 mb-4 text-center" v-if="GetSportData == null" data-bs-toggle="modal" data-bs-target="#importDataModal" role="button">
+          <h1 class="p-2" >Click here to add some sports data</h1>
+          <fa icon="folder-plus" class="folder-symbol" id="temperature"></fa>
       </div>
       <div class="col-12 col-xl-12 mb-4" v-if="GetWeatherData.length > 0">
         <StartWeather caption="Start Weather Conditions" :weatherData="GetWeatherData[0]" />
@@ -43,3 +44,10 @@ export default {
     
 }
 </script>
+
+<style scoped>
+.folder-symbol {
+  font-size: 200px;
+  color: rgb(44, 157, 172);
+}
+</style>
