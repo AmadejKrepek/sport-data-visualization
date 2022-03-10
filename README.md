@@ -22,7 +22,7 @@ Different kind of data visualization for sport analysis.
 
 ### Map details
 
-![image](https://user-images.githubusercontent.com/59646470/157720332-f4de4a9c-194c-4a1f-9639-439bfdf4172c.png)
+![image](https://user-images.githubusercontent.com/59646470/157743120-b19e256b-31cb-4bb8-8eec-bef9d1b90a09.png)
 
 ### Importer Settings
 
