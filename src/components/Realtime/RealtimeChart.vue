@@ -1,6 +1,5 @@
 <template>
     <div v-if="GetRealTimeChartOptions != null">
-        {{GetNumSelectedStats}}
         <div>
             <button class="btn btn-primary m-1" @click="UpdateAltitude($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(0), ShowChart()">Altitude</button>
             <button class="btn btn-primary m-1" @click="UpdateDistance($refs.realTimeChart.chart, GetRealTimeChartOptions), SelectedChart(1), ShowChart()">Distance</button>
@@ -9,8 +8,8 @@
         </div>
         <Highcharts ref="realTimeChart" :options="defaultChartOptions" :class="visibility" />
     </div>
-    <div v-if="GetNumSelectedChart == null || !GetSelectedStats" class="text-center">
-        <h3 class="text-center">Select Chart</h3>
+    <div v-if="GetNumSelectedChart == null" class="text-center">
+        <h3 class="text-center mt-2">Select Chart</h3>
         <fa icon="chart-column" class="chart-symbol mt-5" id="temperature"></fa>
     </div>
 </template>
@@ -76,7 +75,7 @@ export default {
 
 <style scoped>
 .chart-symbol {
-    font-size: 120px;
+    font-size: 150px;
     color: rgb(63, 121, 101);
 }
 </style>

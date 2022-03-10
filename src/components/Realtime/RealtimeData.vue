@@ -5,14 +5,14 @@
             <Weather :caption="'Last weather'" :weatherData="GetRealTime.weather[GetRealTime.weather.length-1]" />
         </div>
     </div>
-    <div class="row">
+    <div class="row mb-5">
         <div class="col-12 col-xl-12">
             <RealtimeChart />
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-xl-12">
-            <QuickStats />
+        <div class="col-12 col-xl-12 text-center">
+            <QuickStats :GetRealTime="GetRealTime" />
         </div>
     </div>
 </div>
