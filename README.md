@@ -20,6 +20,10 @@ Different kind of data visualization for sport analysis.
 
 ![realtimeStats](https://user-images.githubusercontent.com/59646470/157680109-74bc3fba-3294-44ac-9174-2180a567c33d.gif)
 
+### Map details
+
+![image](https://user-images.githubusercontent.com/59646470/157720332-f4de4a9c-194c-4a1f-9639-439bfdf4172c.png)
+
 ### Importer Settings
 
 ![image](https://user-images.githubusercontent.com/59646470/156993617-6f4ebe5a-d1e1-4022-a104-bd068239d275.png)
