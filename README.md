@@ -14,7 +14,11 @@ Different kind of data visualization for sport analysis.
 
 ### Realtime charts
 
-![sportActivity](https://user-images.githubusercontent.com/59646470/157216552-83354d23-6463-419f-978f-87e7e2b95ffa.gif)
+![realtimeChart](https://user-images.githubusercontent.com/59646470/157679524-369ef174-0d1a-4308-adea-fbe123484887.gif)
+
+### Realtime Stats
+
+![realtimeStats](https://user-images.githubusercontent.com/59646470/157680109-74bc3fba-3294-44ac-9174-2180a567c33d.gif)
 
 ### Importer Settings
 
@@ -28,13 +32,11 @@ Different kind of data visualization for sport analysis.
 - Zoom for details (chart)
 - Table visualization (integral metrics)
 - Weather conditions within exercise
-- Local storage for data analysis
-
-![image](https://user-images.githubusercontent.com/59646470/156993497-4cfb9590-3182-41f1-b257-4231c016acc4.png)
+- Realtime data visualization
+- Local storage usage
 
 ## Coming soon
 
-- Realtime data visualization
 - Hill identification
 - Data comparison
 - Map visualization
