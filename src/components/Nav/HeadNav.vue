@@ -4,9 +4,9 @@
         <router-link class="nav-link active" to="/" @click="ClearStats()">Dashboard</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link active" to="/realtime" @click="ClearStats()">Realtime</router-link>
+        <router-link class="nav-link active" to="/realtime" @click="ClearStats(), ShowStats()">Realtime</router-link>
       </li>
-       <li class="nav-item" v-if="GetSelectedStats">
+       <li class="nav-item" v-if="isRealtime">
         <button class="btn nav-link" @click="RenderStats()">Stats</button>
       </li>
       <li class="nav-item">
@@ -53,6 +53,7 @@ export default {
         isSigned: false,
         rememberMe: getWithExpiry('loginData').remember
       },
+      isRealtime: false
     }
   },
   methods: {
@@ -65,6 +66,9 @@ export default {
     getWithExpiry,
     Logout() {
       this.$store.dispatch('setRegisterStatus', this.auth)
+    },
+    ShowStats() {
+      this.isRealtime = true;
     }
   },
   computed: {
