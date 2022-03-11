@@ -6,8 +6,7 @@ The project was inspired from existing project <a href="https://github.com/firef
 
 ## Motivation
 
-The purpose of this project is to bring closer weather conditions within the sport activity and find various data associtations that are dificult to see without closer look. My interest in weather also motivates me to implement such feature in matters of rich analysis and coordination with my mentor of this project <b>dr. I. Jr. Fister</b> is priceless. For more information follow the link: http://www.iztok-jr-fister.eu/
-
+The purpose of this project is to bring closer weather conditions within the sport activity and find various data associtations that are dificult to see without closer look. My interest in weather also motivates me to implement such feature in matters of rich analysis and coordination with my mentor of this project <b>[dr. I. Jr. Fister](http://www.iztok-jr-fister.eu/)</b> is priceless.
 ## Visualization
 
 Different kind of data visualization for sport analysis.
@@ -112,12 +111,11 @@ It will create /dist folder in your root of the project with compiled and minifi
 
 ## References
 
-[1] I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "A minimalistic toolbox for extracting features from sport activity files", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927. Available on: http://iztok-jr-fister.eu/static/publications/294.pdf.
+[1] I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "[A minimalistic toolbox for extracting features from sport activity files](http://iztok-jr-fister.eu/static/publications/294.pdf)", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927.
 
-[2] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "A collection of sport activity datasets for data analysis and data mining 2017a", 2017, Available on: https://academictorrents.com/details/f2221a292540ff3e6c85025754f775361c7cd886/tech
+[2] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "[A collection of sport activity datasets for data analysis and data mining 2017a](https://academictorrents.com/details/f2221a292540ff3e6c85025754f775361c7cd886)", 2017.
 
-[3] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "A collection of sport activity datasets with an emphasis on powermeter data", 2017, Available on: https://academictorrents.com/details/bf76b193960a96a683f9c2afde70acab9d3d757d
-
+[3] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "[A collection of sport activity datasets with an emphasis on powermeter data](https://academictorrents.com/details/bf76b193960a96a683f9c2afde70acab9d3d757d)", 2017.
 ## License
 
 This project is using <a href="https://choosealicense.com/licenses/mit/">MIT</a> license.
