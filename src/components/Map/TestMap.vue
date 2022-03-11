@@ -22,7 +22,7 @@
         <ol-rotate-control v-if="rotatecontrol" />
         <ol-zoom-control v-if="zoomcontrol" />
         <ol-zoomslider-control v-if="zoomslidercontrol" />
-        <ol-zoomtoextent-control v-if="zoomtoextentcontrol" :extent="[23.906,42.812,46.934,34.597]" tipLabel="Fit To Slovenia" />
+        <ol-zoomtoextent-control v-if="zoomtoextentcontrol" :extent="[GetSportData.positions[0][0],GetSportData.positions[0][1] + 15,GetSportData.positions[0][1] - 20,GetSportData.positions[0][0] + 10]" tipLabel="Fit To Slovenia" />
 
         <ol-tile-layer>
                 <ol-source-xyz :url="selected" />
