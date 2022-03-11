@@ -125,6 +125,12 @@ yarn run build
 
 It will create /dist folder in your root of the project with compiled and minified code. Copy and paste the content of /dist folder to your website directory.
 
+## User Data Storage
+
+User must register and login in order to use this application.
+
+User data is only saved in local storage of client's browser and is not send to any other device. When you clean up your browser's local storage, you are prompted to register and login to be able to use your application again.
+
 ## References
 
 [1] I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "[A minimalistic toolbox for extracting features from sport activity files](http://iztok-jr-fister.eu/static/publications/294.pdf)", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927.
