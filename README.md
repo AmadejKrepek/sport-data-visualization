@@ -28,6 +28,22 @@ Different kind of data visualization for sport analysis.
 
 ![image](https://user-images.githubusercontent.com/59646470/156993617-6f4ebe5a-d1e1-4022-a104-bd068239d275.png)
 
+### User Registration
+
+![image](https://user-images.githubusercontent.com/59646470/157900695-3132140e-089c-4959-8059-0b0b7396d994.png)
+
+### User Login
+
+![image](https://user-images.githubusercontent.com/59646470/157900521-572e7576-53a9-4563-b96e-4ad4d501ee8f.png)
+
+### Account Status Bar
+
+![image](https://user-images.githubusercontent.com/59646470/157900796-30290d0b-0fa0-4286-9fed-e5070f60b17e.png)
+
+### Account Details
+
+![image](https://user-images.githubusercontent.com/59646470/157900869-ba368f5c-c8c9-41ca-bfa8-bcc7aed80fa2.png)
+
 ## Features
 
 - Upload TCX and GPX files
@@ -38,13 +54,13 @@ Different kind of data visualization for sport analysis.
 - Weather conditions within exercise
 - Realtime data visualization
 - Local storage usage
+- Map visualization
+- User registration
 
 ## Coming soon
 
 - Hill identification
 - Data comparison
-- Map visualization
-- User registration
 
 ## Installation guide
 
