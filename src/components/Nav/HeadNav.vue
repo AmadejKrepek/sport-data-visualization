@@ -4,7 +4,7 @@
         <router-link class="nav-link active" to="/" @click="ClearStats()">Dashboard</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link active" to="/realtime" @click="RenderStats()">Realtime</router-link>
+        <router-link class="nav-link active" to="/realtime" @click="ClearStats()">Realtime</router-link>
       </li>
        <li class="nav-item" v-if="GetSelectedStats">
         <button class="btn nav-link" @click="RenderStats()">Stats</button>
