@@ -1,6 +1,7 @@
 <template>
-  <Auth v-if="!GetRegisterStatus.isSigned"/>
-  <div class="container-fluid p-0" v-if="GetRegisterStatus.isSigned">
+{{GetRegisterStatus}}
+  <Auth v-if="!GetRegisterStatus.isSigned" />
+  <div class="container-fluid p-0" v-if="GetRegisterStatus.isSigned || (GetRegisterStatus.isSigned && GetRegisterStatus.rememberMe)">
     <div class="row">
       <div class="col-12 col-xl-12">
         <ImportModal />
@@ -8,43 +9,50 @@
       </div>
     </div>
   </div>
-  <router-view v-if="GetRegisterStatus.isSigned"/>
+  <router-view v-if="GetRegisterStatus.isSigned || (GetRegisterStatus.isSigned && GetRegisterStatus.rememberMe)" />
 </template>
 
 <script>
-import HeadNav from '../src/components/Nav/HeadNav.vue'
-import ImportModal from '../src/components/Data/Import/ImportModal.vue'
-import Auth from './components/Auth/Auth.vue';
-import { getWithExpiry } from './utils/localstorage/localstorage';
+import HeadNav from "../src/components/Nav/HeadNav.vue";
+import ImportModal from "../src/components/Data/Import/ImportModal.vue";
+import Auth from "./components/Auth/Auth.vue";
+import { getWithExpiry } from "./utils/localstorage/localstorage";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HeadNav,
     ImportModal,
-    Auth
+    Auth,
   },
   data() {
-        return {
-            loginData: {
-                username: '',
-                password: ''
-            },
-            auth: {
-                isRegistered: true,
-                isSigned: false
-            }
-        }
+    return {
+      loginData: {
+        username: "",
+        password: "",
+      },
+      auth: {
+        isRegistered: getWithExpiry('registerData') != null ? true : false,
+        isSigned: false,
+        rememberMe: false
+      },
+    };
   },
   computed: {
-        GetRegisterStatus() {
-            return this.$store.getters.getRegisterStatus;
-        }
+    GetRegisterStatus() {
+      return this.$store.getters.getRegisterStatus;
+    },
   },
   mounted() {
-    if (getWithExpiry('registerData') != null) {
-          this.$store.dispatch('setRegisterStatus', this.auth);
+    if (getWithExpiry("registerData") != null) {
+      this.$store.dispatch("setRegisterStatus", this.auth);
     }
-  }
-}
+    if (getWithExpiry("loginData" != null)) {
+      this.rememberMe = getWithExpiry('loginData').remember
+      if (this.rememberMe) {
+        this.isSigned = true;
+      }
+    }
+  },
+};
 </script>
