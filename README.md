@@ -121,7 +121,7 @@ It will create /dist folder in your root of the project with compiled and minifi
 
 ## Mentor's website
 
-Click the link: http://www.iztok-jr-fister.eu/
+For more information follow the link: http://www.iztok-jr-fister.eu/
 
 ## License
 
