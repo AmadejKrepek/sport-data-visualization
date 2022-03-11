@@ -11,32 +11,26 @@
                 <tr>
                     <th>Name</th>
                     <td>{{accountData.name}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
                 <tr>
                     <th>Surname</th>
                     <td>{{accountData.surname}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
                 <tr>
                     <th>Age</th>
                     <td>{{accountData.age}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
                 <tr>
                     <th>Weight</th>
                     <td>{{accountData.weight}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
                 <tr>
                     <th>Username</th>
                     <td>{{accountData.username}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
                 <tr>
                     <th>Password</th>
                     <td>{{accountData.password.length > 0 ? '**********' : ''}}</td>
-                    <td><button class="btn btn-warning">Change</button></td>
                 </tr>
             </tbody>
         </table>
@@ -45,11 +39,15 @@
 
 <script>
 import { getWithExpiry } from '../../utils/localstorage/localstorage'
+import { ChangeAccountDetails } from '../../utils/account/account';
 export default {
     data() {
         return {
             accountData: getWithExpiry('registerData') != null ? getWithExpiry('registerData') : null
         }
+    },
+    methods: {
+        ChangeAccountDetails
     }
 }
 </script>

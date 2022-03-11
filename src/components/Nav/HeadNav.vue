@@ -4,9 +4,9 @@
         <router-link class="nav-link active" to="/" @click="ClearStats()">Dashboard</router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link active" to="/realtime" @click="ClearStats()">Realtime</router-link>
+        <router-link class="nav-link active" to="/realtime" @click="RenderStats()">Realtime</router-link>
       </li>
-       <li class="nav-item">
+       <li class="nav-item" v-if="GetSelectedStats">
         <button class="btn nav-link" @click="RenderStats()">Stats</button>
       </li>
       <li class="nav-item">
@@ -30,10 +30,10 @@
         <div class="p-2">Welcome {{getWithExpiry('registerData').name + ' ' + getWithExpiry('registerData').surname + '!'}}</div>
       </li>
       <li class="nav-item p-2">
-        <router-link to="/account"><fa icon="circle-user" class="user-symbol"></fa></router-link>
+        <router-link to="/account" @click="ClearStats()"><fa icon="circle-user" class="user-symbol"></fa></router-link>
       </li>
       <div class="nav-item" v-if="GetRegisterStatus.isSigned">
-        <button class="btn text-white" @click="Logout()">Logout</button>
+        <button class="btn text-white p-2" @click="Logout(), ClearStats()">Logout</button>
       </div>
     </ul>
 </template>
@@ -71,12 +71,16 @@ export default {
     GetRegisterStatus() {
       return this.$store.getters.getRegisterStatus;
     },
+    GetSelectedStats() {
+      return this.$store.getters.getSelectedStats;
+    }
   },
 };
 </script>
 
 <style scoped>
 .user-symbol {
-  font-size: 22px;
+  font-size: 25px;
+  color: rgb(233, 229, 173);
 }
 </style>
