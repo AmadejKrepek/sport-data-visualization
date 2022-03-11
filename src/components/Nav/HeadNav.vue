@@ -30,7 +30,7 @@
         <div class="p-2">Welcome {{getWithExpiry('registerData').name + ' ' + getWithExpiry('registerData').surname + '!'}}</div>
       </li>
       <li class="nav-item p-2">
-        <fa icon="circle-user" class="user-symbol" role="button"></fa>
+        <router-link to="/account"><fa icon="circle-user" class="user-symbol"></fa></router-link>
       </li>
       <div class="nav-item" v-if="GetRegisterStatus.isSigned">
         <button class="btn text-white" @click="Logout()">Logout</button>

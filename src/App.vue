@@ -1,5 +1,4 @@
 <template>
-{{GetRegisterStatus}}
   <Auth v-if="!GetRegisterStatus.isSigned" />
   <div class="container-fluid p-0" v-if="GetRegisterStatus.isSigned || (GetRegisterStatus.isSigned && GetRegisterStatus.rememberMe)">
     <div class="row">
@@ -33,8 +32,8 @@ export default {
       },
       auth: {
         isRegistered: getWithExpiry('registerData') != null ? true : false,
-        isSigned: false,
-        rememberMe: false
+        isSigned: getWithExpiry('loginData') != null ? (getWithExpiry('loginData').remember == true ? true : false) : false,
+        rememberMe: getWithExpiry('loginData') != null ? (getWithExpiry('loginData').remember) : false
       },
     };
   },
@@ -43,16 +42,11 @@ export default {
       return this.$store.getters.getRegisterStatus;
     },
   },
-  mounted() {
+  created() {
     if (getWithExpiry("registerData") != null) {
       this.$store.dispatch("setRegisterStatus", this.auth);
     }
-    if (getWithExpiry("loginData" != null)) {
-      this.rememberMe = getWithExpiry('loginData').remember
-      if (this.rememberMe) {
-        this.isSigned = true;
-      }
-    }
+    
   },
 };
 </script>
