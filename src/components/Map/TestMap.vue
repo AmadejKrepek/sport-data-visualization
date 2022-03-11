@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-12 col-xl-12">
                             <h3>Summary</h3> 
-                            <div>Total Distance: <b>{{Math.round(GetSportData.total_distance * 10) / 10}}</b> m</div>
+                            <div>Total Distance: <b>{{Math.round((GetSportData.total_distance / 1000) * 10) / 10}}</b> km</div>
                             <div>Max Speed: <b>{{Math.round(Math.max(...GetSportData.speeds) * 10) / 10}}</b> km/h</div>
                             <div>Max Altitude: <b>{{Math.round(Math.max(...GetSportData.altitudes) * 10) / 10}}</b> m</div>
                             <div>Min Altitude: <b>{{Math.round(Math.min(...GetSportData.altitudes) * 10) / 10}}</b> m</div>

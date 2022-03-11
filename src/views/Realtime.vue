@@ -1,6 +1,13 @@
 <template>
-    <RealtimeData v-if="!GetSelectedStats" />
-    <RealtimeStats v-if="GetSelectedStats" />
+    <div v-if="GetRealTime != null">
+        <RealtimeData v-if="!GetSelectedStats" />
+        <RealtimeStats v-if="GetSelectedStats" />
+    </div>
+    <div v-else class="text-center">
+        <div class="spinner-grow text-primary p-2" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -18,7 +25,10 @@ export default {
     computed: {
         GetSelectedStats() {
             return this.$store.getters.getSelectedStats;
-        }
+        },
+        GetRealTime() {
+            return this.$store.getters.getRealTime;
+        },
     }
 }
 </script>
