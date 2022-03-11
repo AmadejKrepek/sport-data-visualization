@@ -5,7 +5,6 @@
         <button class="btn btn-primary m-1" @click="UpdateDistance($refs.highchart.chart, GetChartOptions)">Distance</button>
         <button class="btn btn-primary m-1" @click="UpdateHeartRate($refs.highchart.chart, GetChartOptions)">Heart Rate</button>
         <button class="btn btn-primary m-1" @click="UpdateSpeed($refs.highchart.chart, GetChartOptions)">Speed</button>
-        <button class="btn btn-success m-1" @click="UpdateSpeed($refs.highchart.chart, GetChartOptions)">Weather</button>
       </div>
     <Highcharts ref="highchart" :options="GetChartOptions[0].chartOptions" />
   </div>

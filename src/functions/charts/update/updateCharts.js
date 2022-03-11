@@ -12,6 +12,10 @@ function UpdateAltitude(chart, GetChartOptions) {
         subtitle: {
             text: 'Metrics'
         },
+        xAxis: {
+            categories: GetChartOptions[0].chartOptions.xAxis.categories.map(x => x),
+            tickInterval: 100,
+        },
         yAxis: {
             title: {
                 text: 'Altitude (m)'
@@ -46,6 +50,9 @@ function UpdateDistance(chart, GetChartOptions) {
         subtitle: {
             text: 'Metrics'
         },
+        xAxis: {
+            categories: GetChartOptions[0].chartOptions.xAxis.categories.map(x => x)
+        },
         yAxis: {
             title: {
                 text: 'Distance (km)'
@@ -74,6 +81,9 @@ function UpdateHeartRate(chart, GetChartOptions) {
         subtitle: {
             text: 'Metrics'
         },
+        xAxis: {
+            categories: GetChartOptions[0].chartOptions.xAxis.categories.map(x => x)
+        },
         yAxis: {
             title: {
                 text: 'Heart Rate (bpm)'
@@ -101,6 +111,9 @@ function UpdateSpeed(chart, GetChartOptions) {
         },
         subtitle: {
             text: 'Metrics'
+        },
+        xAxis: {
+            categories: GetChartOptions[0].chartOptions.xAxis.categories.map(x => x)
         },
         yAxis: {
             title: {

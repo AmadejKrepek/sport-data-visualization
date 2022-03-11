@@ -1,3 +1,5 @@
+import { tooltipFormater, labelsFormatter } from '../../../utils/chart/chartOptions';
+
 const chartOptions = {
   title: {
     text: "Monthly Average Temperature",
@@ -22,6 +24,9 @@ const chartOptions = {
       "Nov",
       "Dec",
     ],
+    labels: {
+      labelsFormatter
+    }
   },
   yAxis: {
     title: {
@@ -37,6 +42,7 @@ const chartOptions = {
   },
   tooltip: {
     valueSuffix: "°C",
+    tooltipFormater
   },
   legend: {
     layout: "vertical",

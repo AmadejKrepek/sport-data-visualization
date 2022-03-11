@@ -15,7 +15,18 @@ function AddMultipleRequests(data) {
 function AddWeatherRequest(rawData, apiKey) {
     let arr = []
     rawData, apiKey
-    //let requestOne = auth.post(`http://studentdocker.informatika.uni-mb.si:50000/weather/identification?vc_api_key=${apiKey}`, rawData);
+    /*
+    var config = {
+        method: 'post',
+        url: 'http://studentdocker.informatika.uni-mb.si:50000/weather/identification/?vc_api_key=NHWQVNPY8ZX9TWPE4D3KU7TDB',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data : rawData
+      };
+      */
+
+    //let requestOne = axios(config);
     let requestOne = auth.get('https://vreme-podnebje.si/api/weatherResponse.json');
 
     arr.push(requestOne);
@@ -23,7 +34,30 @@ function AddWeatherRequest(rawData, apiKey) {
     return arr;
 }
 
+function AddTopographicRequest(jsonData) {
+    let arr = []
+
+    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:50000/topographicFeatures/', jsonData);
+
+    arr.push(requestOne);
+
+    return arr;
+}
+
+function AddRealTimeRequest() {
+    let arr = [];
+
+    const requestOne = auth.get('https://vreme-podnebje.si/weather');
+
+    arr.push(requestOne);
+
+    return arr;
+
+}
+
 export {
     AddMultipleRequests, 
     AddWeatherRequest,
+    AddTopographicRequest,
+    AddRealTimeRequest
 }
