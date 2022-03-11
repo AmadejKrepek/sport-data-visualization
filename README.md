@@ -114,9 +114,9 @@ It will create /dist folder in your root of the project with compiled and minifi
 
 [1] I. Jr. Fister, L. Lukač, A. Rajšp, I. Fister, L. Pečnik and D. Fister, "A minimalistic toolbox for extracting features from sport activity files", 2021 IEEE 25th International Conference on Intelligent Engineering Systems (INES), 2021, pp. 121-126, doi: 10.1109/INES52918.2021.9512927. Available on: http://iztok-jr-fister.eu/static/publications/294.pdf.
 
-[2] I. Jr. Fister, S. Rauter, D. Fister, I.Fister, "A collection of sport activity datasets for data analysis and data mining 2017a", 2017, Available on: https://academictorrents.com/details/f2221a292540ff3e6c85025754f775361c7cd886/tech
+[2] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "A collection of sport activity datasets for data analysis and data mining 2017a", 2017, Available on: https://academictorrents.com/details/f2221a292540ff3e6c85025754f775361c7cd886/tech
 
-[3] I. Jr. Fister, S. Rauter, D. Fister, I.Fister, "A collection of sport activity datasets with an emphasis on powermeter data", 2017, Available on: https://academictorrents.com/details/bf76b193960a96a683f9c2afde70acab9d3d757d
+[3] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "A collection of sport activity datasets with an emphasis on powermeter data", 2017, Available on: https://academictorrents.com/details/bf76b193960a96a683f9c2afde70acab9d3d757d
 
 
 ## Mentor's website
