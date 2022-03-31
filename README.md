@@ -138,6 +138,11 @@ User data is only saved in the local storage of the client's browser and is not 
 [2] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "[A collection of sport activity datasets for data analysis and data mining 2017a](https://academictorrents.com/details/f2221a292540ff3e6c85025754f775361c7cd886)", 2017.
 
 [3] I. Jr. Fister, S. Rauter, D. Fister, I. Fister, "[A collection of sport activity datasets with an emphasis on power meter data](https://academictorrents.com/details/bf76b193960a96a683f9c2afde70acab9d3d757d)", 2017.
+
 ## License
 
-This project is using <a href="https://choosealicense.com/licenses/mit/">MIT</a> license.
+This project is distributed under the MIT License. This license can be found online at <http://www.opensource.org/licenses/MIT>.
+
+## Disclaimer
+
+This framework is provided as-is, and there are no guarantees that it fits your purposes or that it is bug-free. Use it at your own risk!
