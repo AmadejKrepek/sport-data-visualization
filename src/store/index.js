@@ -15,7 +15,8 @@ export default createStore({
     weatherData: { check: false, apiKey: '', data: [] },
     realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: null, selectedStats: false },
     auth: { isRegistered: false, isSigned: false },
-    calendarData: []
+    calendarData: [],
+    hillIdentification: { image: null }
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -65,6 +66,9 @@ export default createStore({
     },
     SET_CALENDAR_DATA(state, calendarData) {
       state.calendarData = calendarData;
+    },
+    SET_HILL_IMAGE(state, image) {
+      state.hillIdentification.image = image;
     }
   },
   actions: {
@@ -116,6 +120,7 @@ export default createStore({
     getSelectedStats: (state) => state.realTime.selectedStats,
     getRegisterStatus: (state) => state.auth,
     getCalendarData: (state) => state.calendarData,
+    getHillImage: (state) => state.hillIdentification.image
   },
   modules: {
 
