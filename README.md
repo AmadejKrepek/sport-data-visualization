@@ -115,6 +115,22 @@ yarn run serve
 
 Open your browser and go to this URL: http://localhost:8080
 
+### Dockerize app
+
+It is possible to dockerize app with Dockerfile available. You have to follow next commands to setup environment:
+
+#### Create docker image
+```
+docker build -t vuejs-cookbook/dockerize-vuejs-app .
+```
+
+#### Run app in docker container
+```
+docker run -it -p 8080:8080 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
+```
+
+Open your browser and go to this URL: http://localhost:8080. It should work!
+
 ### Production
 
 To prepare your project for production use, proceed with the following command:
