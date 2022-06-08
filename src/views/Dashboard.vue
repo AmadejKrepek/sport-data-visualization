@@ -18,6 +18,12 @@
         <StartWeather caption="End Weather Conditions" :weatherData="GetWeatherData[GetWeatherData.length - 1]" />
       </div>
     </div>
+    <div class="row" v-if="GetSportData != null">
+      <div class="col-12">
+        <span v-if="GetHillImage == null" class="fw-bold">Generating hill identification image...</span>
+        <img :src="GetHillImage" alt="hill_image" v-else>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -39,6 +45,9 @@ export default {
     },
     GetSportData() {
       return this.$store.getters.getSportData;
+    },
+    GetHillImage() {
+      return this.$store.getters.getHillImage;
     }
   },
     

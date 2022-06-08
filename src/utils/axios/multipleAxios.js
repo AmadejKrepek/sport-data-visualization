@@ -3,8 +3,8 @@ import auth from './auth';
 function AddMultipleRequests(data) {
     let arr = []
 
-    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:50000/reader/file', data);
-    const requestTwo = auth.post('http://studentdocker.informatika.uni-mb.si:50000/reader/file/integralMetrics', data);
+    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:40000/reader/file', data);
+    const requestTwo = auth.post('http://studentdocker.informatika.uni-mb.si:40000/reader/file/integralMetrics', data);
 
     arr.push(requestOne);
     arr.push(requestTwo);
@@ -37,10 +37,9 @@ function AddWeatherRequest(rawData, apiKey) {
 function AddTopographicRequest(jsonData) {
     let arr = []
 
-    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:50000/topographicFeatures/', jsonData);
+    const requestOne = auth.post('http://studentdocker.informatika.uni-mb.si:40000/hillIdentification/image', jsonData, { responseType: 'arraybuffer' });
 
     arr.push(requestOne);
-
     return arr;
 }
 
