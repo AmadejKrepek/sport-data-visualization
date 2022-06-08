@@ -13,6 +13,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import OpenLayersMap from 'vue3-openlayers'
 import 'vue3-openlayers/dist/vue3-openlayers.css'
 
+import { vfmPlugin } from 'vue-final-modal'
+
 library.add(fas);
 
 createApp(App)
@@ -20,5 +22,6 @@ createApp(App)
     .component('fa', FontAwesomeIcon)
     .use(VueHighcharts, { Highcharts })
     .use(OpenLayersMap)
+    .use(vfmPlugin)
     .use(router)
 .mount('#app')
