@@ -23,6 +23,14 @@ Different kinds of data visualization for sports analysis are available.
 
 ![image](https://user-images.githubusercontent.com/59646470/157743120-b19e256b-31cb-4bb8-8eec-bef9d1b90a09.png)
 
+### Hill identification Rendering
+
+![test123](https://user-images.githubusercontent.com/59646470/172669710-c23c6205-f2f5-4837-bd4f-b01c53058db1.png)
+
+### Calendar Visualization
+
+![calendar](https://user-images.githubusercontent.com/59646470/172669093-5bdaf21c-8d7b-4df0-b5d2-8169ced05026.gif)
+
 ### Importer Settings
 
 ![image](https://user-images.githubusercontent.com/59646470/156993617-6f4ebe5a-d1e1-4022-a104-bd068239d275.png)
@@ -55,10 +63,10 @@ Different kinds of data visualization for sports analysis are available.
 - Local storage usage
 - Map visualization
 - User registration
+- Calendar visualization
+- Hill identification(rendering image)
 
 ## Coming soon
-
-- Hill identification
 - Data comparison
 
 ## Installation guide
