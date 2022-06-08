@@ -14,7 +14,8 @@ export default createStore({
     chartOptions: null,
     weatherData: { check: false, apiKey: '', data: [] },
     realTime: { data: null, chartOptions: null, chartPointUpdate: null, selectedChart: null, selectedStats: false },
-    auth: { isRegistered: false, isSigned: false }
+    auth: { isRegistered: false, isSigned: false },
+    calendarData: []
   },
   mutations: {
     SET_SPORT_DATA(state, sportData) {
@@ -62,6 +63,9 @@ export default createStore({
     SET_REGISTER_STATUS(state, auth) {
       state.auth = auth;
     },
+    SET_CALENDAR_DATA(state, calendarData) {
+      state.calendarData = calendarData;
+    }
   },
   actions: {
     getSportData({ commit }, fileData) {
@@ -110,7 +114,8 @@ export default createStore({
     getRealTimeChartOptions: (state) => state.realTime.chartOptions,
     getNumSelectedChart: (state) => state.realTime.selectedChart,
     getSelectedStats: (state) => state.realTime.selectedStats,
-    getRegisterStatus: (state) => state.auth
+    getRegisterStatus: (state) => state.auth,
+    getCalendarData: (state) => state.calendarData,
   },
   modules: {
 
