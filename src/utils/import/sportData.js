@@ -24,7 +24,7 @@ function ImportSportData(data, commit) {
         commit('SET_INTEGRAL_SPORT_DATA', removeEmptyMetrics(responses[1].data));
         commit('SET_SUCCESS', true);
 
-        AddTopographicRequest(JSON.stringify(responses[0].data));
+        AddTopographicRequest((responses[0].data));
     })
     .catch((error) => {
         commit('SET_ERROR', true);

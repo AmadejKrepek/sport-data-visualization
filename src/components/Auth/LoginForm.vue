@@ -1,7 +1,7 @@
 <template>
      <form>
         <div class="mb-3">
-            <label for="usernameInput" class="form-label">Username</label>
+            <label for="usernameInput" class="form-label">Username / Email</label>
             <input type="text" class="form-control" id="usernameInput" aria-describedby="usernameHelp" v-model="loginData.username" required>
         </div>
         <div class="mb-3">

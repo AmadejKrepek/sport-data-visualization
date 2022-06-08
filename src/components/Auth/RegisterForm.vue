@@ -18,6 +18,10 @@
                 <input type="text" class="form-control" id="weightInput" aria-describedby="weightHelp" v-model="registerData.weight" required>
             </div>
             <div class="mb-3">
+                <label for="emailInput" class="form-label">Email</label>
+                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" v-model="registerData.email" required>
+            </div>
+            <div class="mb-3">
                 <label for="usernameInput" class="form-label">Username</label>
                 <input type="text" class="form-control" id="usernameInput" aria-describedby="usernameHelp" v-model="registerData.username" required>
             </div>
@@ -31,7 +35,10 @@
         <h6 v-if="isError" class="text-danger">Your data is not correct. Please try to fill form again.</h6>
         <h6 v-if="isSuccess" class="text-success">You have succesfully registered.</h6>
         <button type="button" class="btn btn-secondary" @click="Register()" v-if="!isSuccess">Submit</button>
-        <button type="button" class="btn btn-primary" @click="GoToLogin()" v-if="isSuccess">Sign In</button>
+        <div v-if="isSuccess">
+            <p>Verification code: <b>{{CreateGuid()}}</b> <br />(check if code that was sent to <b>{{registerData.email}}</b> is equal to displayed one)</p>
+            <button type="button" class="btn btn-primary" @click="GoToLogin()" v-if="isSuccess">Sign In</button>
+        </div>
     </form>
 </template>
 
@@ -46,6 +53,7 @@ export default {
                 surname: '',
                 age: 0,
                 weight: 0,
+                email: '',
                 username: '',
                 password: ''
             },
@@ -73,6 +81,13 @@ export default {
         },
         GoToLogin() {
                 this.$store.dispatch('setRegisterStatus', this.auth);
+        },
+        CreateGuid() {  
+            function _p8(s) {  
+                var p = (Math.random().toString(16)+"000000000").substr(2,8);  
+                return s ? "-" + p.substr(0,4) + "-" + p.substr(4,4) : p ;  
+            }  
+            return _p8() + _p8(true) + _p8(true) + _p8();  
         }
     }
 }
