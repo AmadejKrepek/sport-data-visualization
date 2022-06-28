@@ -3,7 +3,7 @@
     <div class="row mb-5">
         <div class="col-12 col-xl-4 mb-5">
             <div><fa icon="road" class="realtime-symbol" id="distance"></fa></div>
-            <div class="mt-1 mb-2 realtime-value">{{Math.round(GetRealTime.total_distance * 100) / 100}} km</div>
+            <div class="mt-1 mb-2 realtime-value">{{Math.round(GetRealTime.total_distance * 100) / 100}} m</div>
         </div>
         <div class="col-12 col-xl-4 mb-5">
             <fa icon="up-down" class="realtime-symbol" id="altitude"></fa>

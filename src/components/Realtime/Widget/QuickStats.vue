@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 col-xl-4">
                 <div><fa icon="road" class="quick-symbol" id="distance"></fa></div>
-                <div class="mt-1 mb-2 quick-value">{{Math.round(GetRealTime.total_distance * 100) / 100}} km</div>
+                <div class="mt-1 mb-2 quick-value">{{Math.round(GetRealTime.total_distance * 100) / 100}} m</div>
             </div>
             <div class="col-12 col-xl-4">
                 <fa icon="stopwatch" class="quick-symbol" id="timestamp"></fa>
